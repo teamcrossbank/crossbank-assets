@@ -88,7 +88,7 @@
                 <div class="hero__meta">
                   <time datetime="{{ hero.published_at | date: "%Y-%m-%d" }}">{{ hero.published_at | date: format: "date" }}</time>
                   {% assign words = hero.content | strip_html | split: ' ' | size %}
-                  {% assign minutes = words | divided_by: 200 %}{% if minutes < 1 %}{% assign minutes = 1 %}{% endif %}
+                  {% assign minutes = words | divided_by: 200 | ceil %}
                   <span class="dot">•</span><span>{{ minutes }} min read</span>
                 </div>
                 {% assign preview_h = hero.excerpt_or_content | strip_html | truncate: 120, '…' %}
@@ -154,7 +154,7 @@
                       {% endif %}
                       {% if section.settings.show_read_time %}
                         {% assign words = article.content | strip_html | split: ' ' | size %}
-                        {% assign minutes = words | divided_by: 200 %}{% if minutes < 1 %}{% assign minutes = 1 %}{% endif %}
+                        {% assign minutes = words | divided_by: 200 | ceil %}
                         <span class="dot">•</span><span>{{ minutes }} min read</span>
                       {% endif %}
                     </div>
