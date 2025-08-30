@@ -48,8 +48,7 @@
 
         {%- comment -%} FEATURED HERO on first page {%- endcomment -%}
         {% if section.settings.show_hero and paginate.current_page == 1 %}
-          {% assign hero = nil %}
-          {% for a in blog.articles limit:1 %}{% assign hero = a %}{% endfor %}
+          {% assign hero = blog.articles | first %}
           {% if hero %}
             <article class="hero">
               <a class="hero__media" href="{{ hero.url }}" aria-label="{{ hero.title | escape }}">
