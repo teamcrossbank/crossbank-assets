@@ -1,3 +1,4 @@
+/* Blog grid section styles */
 /* Shell + accent variables that actually change with Theme select */
 #blog-grid-{{ section.id }} { position: relative; }
 #blog-grid-{{ section.id }} .page-width { max-width: var(--page-width, 1100px); margin: 0 auto; padding: 0 1rem; }
