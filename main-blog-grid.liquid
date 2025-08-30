@@ -58,9 +58,11 @@
                   {% assign h960 = hero.image | image_url: width: 960 %}
                   {% assign h1440 = hero.image | image_url: width: 1440 %}
                   {% if section.settings.hero_ratio == '4x3' %}
-                    {% assign hw = 1200 %}{% assign hh = 900 %}
+                    {% assign hw = 1200 %}
+                    {% assign hh = 900 %}
                   {% else %}
-                    {% assign hw = 1440 %}{% assign hh = 810 %}
+                    {% assign hw = 1440 %}
+                    {% assign hh = 810 %}
                   {% endif %}
                   <img
                     class="hero__img hero__img--{{ section.settings.hero_ratio }}"
@@ -113,8 +115,12 @@
             <li class="post">
               <article class="post__card">
                 <a class="post__media" href="{{ article.url }}" aria-label="{{ article.title | escape }}">
-                  {% assign thumb_w = 112 %}{% assign thumb_h = 84 %}
-                  {% if section.settings.thumb_ratio == '1x1' %}{% assign thumb_w = 100 %}{% assign thumb_h = 100 %}{% endif %}
+                  {% assign thumb_w = 112 %}
+                  {% assign thumb_h = 84 %}
+                  {% if section.settings.thumb_ratio == '1x1' %}
+                    {% assign thumb_w = 100 %}
+                    {% assign thumb_h = 100 %}
+                  {% endif %}
 
                   {% if article.image %}
                     {% assign alt_text = article.image.alt | default: article.title %}
